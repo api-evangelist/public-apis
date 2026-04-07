@@ -10,9 +10,9 @@ image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - API Aggregation
   - API Directory
+  - API Discovery
   - Free APIs
   - Open Source
-  - API Discovery
 url: >-
   https://raw.githubusercontent.com/api-evangelist/public-apis/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -46,8 +46,8 @@ apis:
     humanURL: https://github.com/davemachado/public-api
     tags:
       - API Directory
-      - REST API
       - Free APIs
+      - REST API
     properties:
       - type: Documentation
         url: https://github.com/davemachado/public-api
