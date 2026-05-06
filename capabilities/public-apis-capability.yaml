@@ -1,0 +1,250 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Public APIs API
+  description: 'A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires
+    no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.'
+  tags:
+  - Public
+  - Apis
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: public-apis
+    baseUri: https://api.publicapis.org
+    description: Public APIs API HTTP API.
+    resources:
+    - name: entries
+      path: /entries
+      operations:
+      - name: listentries
+        method: GET
+        description: List entries
+        inputParameters:
+        - name: title
+          in: query
+          type: string
+          description: Filter entries whose title contains the provided value.
+        - name: description
+          in: query
+          type: string
+          description: Filter entries whose description contains the provided value.
+        - name: auth
+          in: query
+          type: string
+          description: Filter entries by authentication type.
+        - name: https
+          in: query
+          type: boolean
+          description: Filter entries by HTTPS support.
+        - name: cors
+          in: query
+          type: string
+          description: Filter entries by CORS support.
+        - name: category
+          in: query
+          type: string
+          description: Filter entries by category.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: random
+      path: /random
+      operations:
+      - name: getrandomentry
+        method: GET
+        description: Random entry
+        inputParameters:
+        - name: title
+          in: query
+          type: string
+        - name: description
+          in: query
+          type: string
+        - name: auth
+          in: query
+          type: string
+        - name: https
+          in: query
+          type: boolean
+        - name: cors
+          in: query
+          type: string
+        - name: category
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: categories
+      path: /categories
+      operations:
+      - name: listcategories
+        method: GET
+        description: List categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: health
+      path: /health
+      operations:
+      - name: gethealth
+        method: GET
+        description: Health check
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: public-apis-rest
+    description: REST adapter for Public APIs API.
+    resources:
+    - path: /entries
+      name: listentries
+      operations:
+      - method: GET
+        name: listentries
+        description: List entries
+        call: public-apis.listentries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /random
+      name: getrandomentry
+      operations:
+      - method: GET
+        name: getrandomentry
+        description: Random entry
+        call: public-apis.getrandomentry
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /categories
+      name: listcategories
+      operations:
+      - method: GET
+        name: listcategories
+        description: List categories
+        call: public-apis.listcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /health
+      name: gethealth
+      operations:
+      - method: GET
+        name: gethealth
+        description: Health check
+        call: public-apis.gethealth
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: public-apis-mcp
+    transport: http
+    description: MCP adapter for Public APIs API for AI agent use.
+    tools:
+    - name: listentries
+      description: List entries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis.listentries
+      with:
+        title: tools.title
+        description: tools.description
+        auth: tools.auth
+        https: tools.https
+        cors: tools.cors
+        category: tools.category
+      inputParameters:
+      - name: title
+        type: string
+        description: Filter entries whose title contains the provided value.
+      - name: description
+        type: string
+        description: Filter entries whose description contains the provided value.
+      - name: auth
+        type: string
+        description: Filter entries by authentication type.
+      - name: https
+        type: boolean
+        description: Filter entries by HTTPS support.
+      - name: cors
+        type: string
+        description: Filter entries by CORS support.
+      - name: category
+        type: string
+        description: Filter entries by category.
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrandomentry
+      description: Random entry
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis.getrandomentry
+      with:
+        title: tools.title
+        description: tools.description
+        auth: tools.auth
+        https: tools.https
+        cors: tools.cors
+        category: tools.category
+      inputParameters:
+      - name: title
+        type: string
+        description: title
+      - name: description
+        type: string
+        description: description
+      - name: auth
+        type: string
+        description: auth
+      - name: https
+        type: boolean
+        description: https
+      - name: cors
+        type: string
+        description: cors
+      - name: category
+        type: string
+        description: category
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcategories
+      description: List categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis.listcategories
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gethealth
+      description: Health check
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis.gethealth
+      outputParameters:
+      - type: object
+        mapping: $.
