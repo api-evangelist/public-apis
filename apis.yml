@@ -62,7 +62,7 @@ apis:
 common:
   - type: Website
     url: https://github.com/public-apis/public-apis
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/public-apis
   - type: Contributing Guide
     url: https://github.com/public-apis/public-apis/blob/master/CONTRIBUTING.md
