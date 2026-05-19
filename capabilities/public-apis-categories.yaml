@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Public APIs API — Categories
+  description: 'Public APIs API — Categories. 1 operations. Lead operation: List categories. Self-contained Naftiko capability
+    covering one Public Apis business surface.'
+  tags:
+  - Public Apis
+  - Categories
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PUBLIC_APIS_API_KEY: PUBLIC_APIS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: public-apis-categories
+    baseUri: https://api.publicapis.org
+    description: Public APIs API — Categories business capability. Self-contained, no shared references.
+    resources:
+    - name: categories
+      path: /categories
+      operations:
+      - name: listcategories
+        method: GET
+        description: List categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: public-apis-categories-rest
+    port: 8080
+    description: REST adapter for Public APIs API — Categories. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/categories
+      name: categories
+      description: REST surface for categories.
+      operations:
+      - method: GET
+        name: listcategories
+        description: List categories
+        call: public-apis-categories.listcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: public-apis-categories-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Public APIs API — Categories. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-categories
+      description: List categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis-categories.listcategories
+      outputParameters:
+      - type: object
+        mapping: $.

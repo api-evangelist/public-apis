@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Public APIs API — Health
+  description: 'Public APIs API — Health. 1 operations. Lead operation: Health check. Self-contained Naftiko capability covering
+    one Public Apis business surface.'
+  tags:
+  - Public Apis
+  - Health
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PUBLIC_APIS_API_KEY: PUBLIC_APIS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: public-apis-health
+    baseUri: https://api.publicapis.org
+    description: Public APIs API — Health business capability. Self-contained, no shared references.
+    resources:
+    - name: health
+      path: /health
+      operations:
+      - name: gethealth
+        method: GET
+        description: Health check
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: public-apis-health-rest
+    port: 8080
+    description: REST adapter for Public APIs API — Health. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/health
+      name: health
+      description: REST surface for health.
+      operations:
+      - method: GET
+        name: gethealth
+        description: Health check
+        call: public-apis-health.gethealth
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: public-apis-health-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Public APIs API — Health. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: health-check
+      description: Health check
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis-health.gethealth
+      outputParameters:
+      - type: object
+        mapping: $.

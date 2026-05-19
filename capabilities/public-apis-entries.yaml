@@ -1,0 +1,171 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Public APIs API — Entries
+  description: 'Public APIs API — Entries. 2 operations. Lead operation: List entries. Self-contained Naftiko capability covering
+    one Public Apis business surface.'
+  tags:
+  - Public Apis
+  - Entries
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PUBLIC_APIS_API_KEY: PUBLIC_APIS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: public-apis-entries
+    baseUri: https://api.publicapis.org
+    description: Public APIs API — Entries business capability. Self-contained, no shared references.
+    resources:
+    - name: entries
+      path: /entries
+      operations:
+      - name: listentries
+        method: GET
+        description: List entries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: title
+          in: query
+          type: string
+          description: Filter entries whose title contains the provided value.
+        - name: description
+          in: query
+          type: string
+          description: Filter entries whose description contains the provided value.
+        - name: auth
+          in: query
+          type: string
+          description: Filter entries by authentication type.
+        - name: https
+          in: query
+          type: boolean
+          description: Filter entries by HTTPS support.
+        - name: cors
+          in: query
+          type: string
+          description: Filter entries by CORS support.
+        - name: category
+          in: query
+          type: string
+          description: Filter entries by category.
+    - name: random
+      path: /random
+      operations:
+      - name: getrandomentry
+        method: GET
+        description: Random entry
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: title
+          in: query
+          type: string
+        - name: description
+          in: query
+          type: string
+        - name: auth
+          in: query
+          type: string
+        - name: https
+          in: query
+          type: boolean
+        - name: cors
+          in: query
+          type: string
+        - name: category
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: public-apis-entries-rest
+    port: 8080
+    description: REST adapter for Public APIs API — Entries. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/entries
+      name: entries
+      description: REST surface for entries.
+      operations:
+      - method: GET
+        name: listentries
+        description: List entries
+        call: public-apis-entries.listentries
+        with:
+          title: rest.title
+          description: rest.description
+          auth: rest.auth
+          https: rest.https
+          cors: rest.cors
+          category: rest.category
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/random
+      name: random
+      description: REST surface for random.
+      operations:
+      - method: GET
+        name: getrandomentry
+        description: Random entry
+        call: public-apis-entries.getrandomentry
+        with:
+          title: rest.title
+          description: rest.description
+          auth: rest.auth
+          https: rest.https
+          cors: rest.cors
+          category: rest.category
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: public-apis-entries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Public APIs API — Entries. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-entries
+      description: List entries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis-entries.listentries
+      with:
+        title: tools.title
+        description: tools.description
+        auth: tools.auth
+        https: tools.https
+        cors: tools.cors
+        category: tools.category
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: random-entry
+      description: Random entry
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: public-apis-entries.getrandomentry
+      with:
+        title: tools.title
+        description: tools.description
+        auth: tools.auth
+        https: tools.https
+        cors: tools.cors
+        category: tools.category
+      outputParameters:
+      - type: object
+        mapping: $.
