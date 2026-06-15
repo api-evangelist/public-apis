@@ -1,0 +1,148 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Public APIs API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.publicapis.org/entries",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "Filter entries whose title contains the provided value."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Filter entries whose description contains the provided value."
+              },
+              {
+                "name": "auth",
+                "value": "",
+                "type": "query",
+                "description": "Filter entries by authentication type."
+              },
+              {
+                "name": "https",
+                "value": "",
+                "type": "query",
+                "description": "Filter entries by HTTPS support."
+              },
+              {
+                "name": "cors",
+                "value": "",
+                "type": "query",
+                "description": "Filter entries by CORS support."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter entries by category."
+              }
+            ]
+          },
+          "docs": "List all entries currently cataloged in the public-apis project. Supports filtering by query parameters."
+        },
+        {
+          "info": {
+            "name": "Random entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.publicapis.org/random",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "auth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "https",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cors",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a single randomly-selected entry. Supports the same filtering parameters as /entries."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.publicapis.org/categories"
+          },
+          "docs": "List all categories used to organize entries."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.publicapis.org/health"
+          },
+          "docs": "Check health of the running service."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

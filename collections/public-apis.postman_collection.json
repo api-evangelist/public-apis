@@ -1,0 +1,452 @@
+{
+  "item": [
+    {
+      "id": "95067274-7de6-426d-bc67-11964deb9e1d",
+      "name": "Entries",
+      "description": {
+        "content": "Endpoints for listing API directory entries.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97dced69-a316-46fd-9f07-66308775d4af",
+          "name": "List entries",
+          "request": {
+            "name": "List entries",
+            "description": {
+              "content": "List all entries currently cataloged in the public-apis project. Supports filtering by query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>",
+                  "description": "Filter entries whose title contains the provided value."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Filter entries whose description contains the provided value."
+                },
+                {
+                  "disabled": false,
+                  "key": "auth",
+                  "value": "<string>",
+                  "description": "Filter entries by authentication type."
+                },
+                {
+                  "disabled": false,
+                  "key": "https",
+                  "value": "<boolean>",
+                  "description": "Filter entries by HTTPS support."
+                },
+                {
+                  "disabled": false,
+                  "key": "cors",
+                  "value": "<string>",
+                  "description": "Filter entries by CORS support."
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Filter entries by category."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "143a7c44-3eb1-47d0-a11a-360663bb33b2",
+              "name": "List of entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "auth",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "https",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cors",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5216,\n  \"entries\": [\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": true,\n      \"Cors\": \"unknown\",\n      \"Link\": \"http://xDIIzN.dilwHNsO1cr.T\",\n      \"Category\": \"string\"\n    },\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": false,\n      \"Cors\": \"yes\",\n      \"Link\": \"http://arhFotgBHFXcz.bhzhkDzk8tDDZqaBH\",\n      \"Category\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61c9796a-136c-4902-bdfb-b87aa4b5783d",
+          "name": "Random entry",
+          "request": {
+            "name": "Random entry",
+            "description": {
+              "content": "Returns a single randomly-selected entry. Supports the same filtering parameters as /entries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "auth",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "https",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cors",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3654b3d-fd89-4d27-aa94-bda18cd7b1c1",
+              "name": "Random entry result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "auth",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "https",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cors",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4031,\n  \"entries\": [\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": false,\n      \"Cors\": \"no\",\n      \"Link\": \"http://llGzcvZJGNAzShbihcJuJQrkwRtLJwUcK.knaiNbc\",\n      \"Category\": \"string\"\n    },\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": true,\n      \"Cors\": \"no\",\n      \"Link\": \"http://DmrjwuFFgXRPGmIztwDwUKqlAPk.ppn5U1JBxYf.4dgS9oSoE5vh.NhN7YT-Eyl2MvWPPWKx2EZC\",\n      \"Category\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5f6a1917-4831-4c8a-8003-e3e6473fcf86",
+      "name": "Categories",
+      "description": {
+        "content": "Endpoints for category metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2060dc1-d5fc-481d-a32f-583aca836eec",
+          "name": "List categories",
+          "request": {
+            "name": "List categories",
+            "description": {
+              "content": "List all categories used to organize entries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf63a7e2-b119-4adf-b3fb-522c2036a02b",
+              "name": "List of categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "69750891-68b9-44d9-910d-43a3c16ffdd8",
+      "name": "Health",
+      "description": {
+        "content": "Service health check.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fdbce290-b3bc-4b7a-9091-5561cf8e2b03",
+          "name": "Health check",
+          "request": {
+            "name": "Health check",
+            "description": {
+              "content": "Check health of the running service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aaea350c-054a-428c-803e-7ba8018530e8",
+              "name": "Service is healthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.publicapis.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "642d1c76-8d41-454a-bf19-cb4a34745b12",
+    "name": "Public APIs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.\n\nContact Support:\n Name: Dave Machado",
+      "type": "text/plain"
+    }
+  }
+}
