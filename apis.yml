@@ -6,7 +6,7 @@ description: >-
   stars. A companion REST API (davemachado/public-api) exposes the directory data programmatically over HTTPS with no
   authentication.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - API Aggregation
   - API Directory
