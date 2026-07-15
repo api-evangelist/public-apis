@@ -55,6 +55,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/public-apis/refs/heads/main/openapi/public-apis-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/public-apis-agentic-access.yml
   - type: Website
     url: https://github.com/public-apis/public-apis
   - type: GitHubOrganization
