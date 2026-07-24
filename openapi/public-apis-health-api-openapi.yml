@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: Public APIs Categories Health API
+  description: 'A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.'
+  version: '1.0'
+  contact:
+    name: Dave Machado
+    url: https://github.com/davemachado/public-api
+  license:
+    name: MIT
+    url: https://github.com/davemachado/public-api/blob/master/LICENSE
+servers:
+- url: https://api.publicapis.org
+  description: Production
+tags:
+- name: Health
+  description: Service health check.
+paths:
+  /health:
+    get:
+      summary: Health check
+      description: Check health of the running service.
+      operationId: getHealth
+      tags:
+      - Health
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string

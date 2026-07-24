@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Public APIs Categories API
+  description: 'A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.'
+  version: '1.0'
+  contact:
+    name: Dave Machado
+    url: https://github.com/davemachado/public-api
+  license:
+    name: MIT
+    url: https://github.com/davemachado/public-api/blob/master/LICENSE
+servers:
+- url: https://api.publicapis.org
+  description: Production
+tags:
+- name: Categories
+  description: Endpoints for category metadata.
+paths:
+  /categories:
+    get:
+      summary: List categories
+      description: List all categories used to organize entries.
+      operationId: listCategories
+      tags:
+      - Categories
+      responses:
+        '200':
+          description: List of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
