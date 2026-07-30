@@ -6,7 +6,19 @@ description: >-
   stars. A companion REST API (davemachado/public-api) exposes the directory data programmatically over HTTPS with no
   authentication.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Freemium · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/public-apis.png
 tags:
   - API Aggregation
   - API Directory
@@ -18,42 +30,65 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: public-apis:public-apis-directory
-    name: Public APIs Directory
-    description: >-
-      A collective list of free APIs organized by category including Animals, Finance, Weather, Geocoding, Government,
-      Health, Machine Learning, Sports, and 40+ more categories for developers to discover and integrate into their
-      projects.
-    humanURL: https://github.com/public-apis/public-apis
-    tags:
-      - API Directory
-      - Free APIs
-      - Open Source
-      - REST APIs
-    properties:
-      - type: Documentation
-        url: https://github.com/public-apis/public-apis#index
-      - type: GitHubRepository
-        url: https://github.com/public-apis/public-apis
-  - aid: public-apis:public-api
-    name: Public APIs API
-    description: >-
-      A RESTful API for programmatically accessing the public-apis directory data. Supports CORS and requires no
-      authentication, with all responses served over HTTPS. Endpoints include /entries, /random, /categories, and
-      /health.
-    humanURL: https://github.com/davemachado/public-api
-    baseURL: https://api.publicapis.org
-    tags:
-      - API Directory
-      - Free APIs
-      - REST API
-    properties:
-      - type: Documentation
-        url: https://github.com/davemachado/public-api
-      - type: GitHubRepository
-        url: https://github.com/davemachado/public-api
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/public-apis/refs/heads/main/openapi/public-apis-openapi.yml
+- aid: public-apis:public-apis-directory
+  name: Public APIs Directory
+  description: >-
+    A collective list of free APIs organized by category including Animals, Finance, Weather, Geocoding,
+    Government, Health, Machine Learning, Sports, and 40+ more categories for developers to discover and
+    integrate into their projects.
+  humanURL: https://github.com/public-apis/public-apis
+  tags:
+  - API Directory
+  - Free APIs
+  - Open Source
+  - REST APIs
+  properties:
+  - type: Documentation
+    url: https://github.com/public-apis/public-apis#index
+  - type: GitHubRepository
+    url: https://github.com/public-apis/public-apis
+- aid: public-apis:public-apis-categories-api
+  name: Public APIs Categories API
+  description: Endpoints for category metadata.
+  humanURL: https://github.com/public-apis/public-apis
+  baseURL: https://api.publicapis.org
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/public-apis-categories-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/davemachado/public-api
+  - type: GitHubRepository
+    url: https://github.com/davemachado/public-api
+- aid: public-apis:public-apis-entries-api
+  name: Public APIs Entries API
+  description: Endpoints for listing API directory entries.
+  humanURL: https://github.com/public-apis/public-apis
+  baseURL: https://api.publicapis.org
+  tags:
+  - Entries
+  properties:
+  - type: OpenAPI
+    url: openapi/public-apis-entries-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/davemachado/public-api
+  - type: GitHubRepository
+    url: https://github.com/davemachado/public-api
+- aid: public-apis:public-apis-health-api
+  name: Public APIs Health API
+  description: Service health check.
+  humanURL: https://github.com/public-apis/public-apis
+  baseURL: https://api.publicapis.org
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/public-apis-health-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/davemachado/public-api
+  - type: GitHubRepository
+    url: https://github.com/davemachado/public-api
 common:
   - type: AgenticAccess
     url: agentic-access/public-apis-agentic-access.yml
