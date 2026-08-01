@@ -1,0 +1,18 @@
+{
+  "provider": "public-apis",
+  "sources": [
+    "public-apis-categories-api-openapi.yml",
+    "public-apis-entries-api-openapi.yml",
+    "public-apis-health-api-openapi.yml"
+  ],
+  "outputs": [
+    "public-apis-categories-api-openapi.yml",
+    "public-apis-entries-api-openapi.yml",
+    "public-apis-health-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: Public APIs API
+  description: >-
+    A RESTful API for programmatically accessing the public-apis directory data.
+    The API supports CORS and requires no authentication. All responses are
+    served over HTTPS. Original source: davemachado/public-api.
+  version: '1.0'
+  contact:
+    name: Dave Machado
+    url: https://github.com/davemachado/public-api
+  license:
+    name: MIT
+    url: https://github.com/davemachado/public-api/blob/master/LICENSE
+servers:
+  - url: https://api.publicapis.org
+    description: Production
+paths:
+  /entries:
+    get:
+      summary: List entries
+      description: List all entries currently cataloged in the public-apis project. Supports filtering by query parameters.
+      operationId: listEntries
+      tags:
+        - Entries
+      parameters:
+        - in: query
+          name: title
+          schema:
+            type: string
+          description: Filter entries whose title contains the provided value.
+        - in: query
+          name: description
+          schema:
+            type: string
+          description: Filter entries whose description contains the provided value.
+        - in: query
+          name: auth
+          schema:
+            type: string
+            enum:
+              - ''
+              - apiKey
+              - OAuth
+              - X-Mashape-Key
+              - User-Agent
+          description: Filter entries by authentication type.
+        - in: query
+          name: https
+          schema:
+            type: boolean
+          description: Filter entries by HTTPS support.
+        - in: query
+          name: cors
+          schema:
+            type: string
+            enum:
+              - 'yes'
+              - 'no'
+              - unknown
+          description: Filter entries by CORS support.
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: Filter entries by category.
+      responses:
+        '200':
+          description: List of entries
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntriesResponse'
+  /random:
+    get:
+      summary: Random entry
+      description: Returns a single randomly-selected entry. Supports the same filtering parameters as /entries.
+      operationId: getRandomEntry
+      tags:
+        - Entries
+      parameters:
+        - in: query
+          name: title
+          schema:
+            type: string
+        - in: query
+          name: description
+          schema:
+            type: string
+        - in: query
+          name: auth
+          schema:
+            type: string
+        - in: query
+          name: https
+          schema:
+            type: boolean
+        - in: query
+          name: cors
+          schema:
+            type: string
+        - in: query
+          name: category
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Random entry result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntriesResponse'
+  /categories:
+    get:
+      summary: List categories
+      description: List all categories used to organize entries.
+      operationId: listCategories
+      tags:
+        - Categories
+      responses:
+        '200':
+          description: List of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /health:
+    get:
+      summary: Health check
+      description: Check health of the running service.
+      operationId: getHealth
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+components:
+  schemas:
+    Entry:
+      type: object
+      properties:
+        API:
+          type: string
+          description: Name of the API.
+        Description:
+          type: string
+        Auth:
+          type: string
+          description: Authentication type required (empty string when none).
+        HTTPS:
+          type: boolean
+        Cors:
+          type: string
+          enum:
+            - 'yes'
+            - 'no'
+            - unknown
+        Link:
+          type: string
+          format: uri
+        Category:
+          type: string
+    EntriesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Number of entries returned.
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry'
+tags:
+  - name: Entries
+    description: Endpoints for listing API directory entries.
+  - name: Categories
+    description: Endpoints for category metadata.
+  - name: Health
+    description: Service health check.
