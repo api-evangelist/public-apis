@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "c0c26235-d1e9-4422-a1b3-955037617829",
+      "name": "Categories",
+      "description": {
+        "content": "Endpoints for category metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b1252e1-d59f-4866-be5c-0d9e461bfbee",
+          "name": "List categories",
+          "request": {
+            "name": "List categories",
+            "description": {
+              "content": "List all categories used to organize entries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13b62810-42da-4c3d-bf85-f76427a57646",
+              "name": "List of categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.publicapis.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "87624142-59dd-4359-b251-de941ecefa38",
+    "name": "Public APIs Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.\n\nContact Support:\n Name: Dave Machado",
+      "type": "text/plain"
+    }
+  }
+}

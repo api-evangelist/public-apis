@@ -11,6 +11,9 @@ providerId: public-apis
 publisherName: Public APIs
 serviceCategory: API
 created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
 modified: '2026-05-04'
 tags:
   - API Aggregation

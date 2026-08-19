@@ -1,0 +1,290 @@
+{
+  "item": [
+    {
+      "id": "7348e818-71d9-484f-b1d7-d77c39c92415",
+      "name": "Entries",
+      "description": {
+        "content": "Endpoints for listing API directory entries.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "883d0bbf-2262-4825-83f6-c0edc9830860",
+          "name": "List entries",
+          "request": {
+            "name": "List entries",
+            "description": {
+              "content": "List all entries currently cataloged in the public-apis project. Supports filtering by query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>",
+                  "description": "Filter entries whose title contains the provided value."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Filter entries whose description contains the provided value."
+                },
+                {
+                  "disabled": false,
+                  "key": "auth",
+                  "value": "<string>",
+                  "description": "Filter entries by authentication type."
+                },
+                {
+                  "disabled": false,
+                  "key": "https",
+                  "value": "<boolean>",
+                  "description": "Filter entries by HTTPS support."
+                },
+                {
+                  "disabled": false,
+                  "key": "cors",
+                  "value": "<string>",
+                  "description": "Filter entries by CORS support."
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Filter entries by category."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbdb7c6e-ef9e-4043-95b7-1bf793cd0287",
+              "name": "List of entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "auth",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "https",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cors",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7441,\n  \"entries\": [\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": false,\n      \"Cors\": \"unknown\",\n      \"Link\": \"https://VYBULKvpvPBDdj.hrmRJbtNUd4ndm\",\n      \"Category\": \"string\"\n    },\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": false,\n      \"Cors\": \"unknown\",\n      \"Link\": \"https://STPlBuzdXthwPMsrdBzQKwfE.hsluN-tp,96psZTB-omKY5UF,9X97qCNtlFfUfPBBNdfWzAJbZtWpXkHBUFZ-1cUN3I0l\",\n      \"Category\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe68beb5-53f2-41b3-bce8-702c66f5fe9e",
+          "name": "Random entry",
+          "request": {
+            "name": "Random entry",
+            "description": {
+              "content": "Returns a single randomly-selected entry. Supports the same filtering parameters as /entries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "auth",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "https",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cors",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11728c3a-0c23-4f27-8bf3-7e8e4e9a9390",
+              "name": "Random entry result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "auth",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "https",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "cors",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 3521,\n  \"entries\": [\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": true,\n      \"Cors\": \"no\",\n      \"Link\": \"https://pjNzX.noevjPt-\",\n      \"Category\": \"string\"\n    },\n    {\n      \"API\": \"string\",\n      \"Description\": \"string\",\n      \"Auth\": \"string\",\n      \"HTTPS\": false,\n      \"Cors\": \"no\",\n      \"Link\": \"https://UhukYL.ipDWnGi+z7KKL\",\n      \"Category\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.publicapis.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6f4a6b05-c154-45ca-aa52-0f888c35027a",
+    "name": "Public APIs Categories Entries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.\n\nContact Support:\n Name: Dave Machado",
+      "type": "text/plain"
+    }
+  }
+}
