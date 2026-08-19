@@ -28,7 +28,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/public-apis/refs/heads/main/apis.yml
 created: '2026-03-26'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: public-apis:public-apis-directory
   name: Public APIs Directory
