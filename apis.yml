@@ -24,6 +24,12 @@ tags:
   - API Directory
   - API Discovery
   - Free APIs
+  - Open-Source
+tags_raw:
+  - API Aggregation
+  - API Directory
+  - API Discovery
+  - Free APIs
   - Open Source
 url: https://raw.githubusercontent.com/api-evangelist/public-apis/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -38,6 +44,11 @@ apis:
     integrate into their projects.
   humanURL: https://github.com/public-apis/public-apis
   tags:
+  - API Directory
+  - Free APIs
+  - Open-Source
+  - REST APIs
+  tags_raw:
   - API Directory
   - Free APIs
   - Open Source
