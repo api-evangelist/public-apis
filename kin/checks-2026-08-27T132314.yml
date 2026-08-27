@@ -1,0 +1,182 @@
+---
+kin_checks:
+  slug: public-apis
+  schema_version: 0.15.1
+  scored_at: '2026-08-27'
+  run_ts: 2026-08-27T132314
+  note: Actionable checks only (missed + partial). earned/na are every other check
+    in rubric/scoring-0.15.1.yml; counts below let you verify that.
+  counts:
+    total: 130
+    earned: 22
+    partial: 5
+    missed: 71
+    na: 32
+  checks:
+  - id: base_url_per_api
+    status: missed
+  - id: well_known_published
+    status: missed
+  - id: llms_txt_published
+    status: missed
+  - id: apis_json_self_hosted
+    status: missed
+  - id: openapi_3_2
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: openapi_3_1
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: servers_resolvable
+    status: missed
+  - id: error_responses_documented
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: examples_present
+    status: missed
+  - id: components_reuse
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: security_schemes_defined
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: security_applied
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: webhooks_or_callbacks
+    status: missed
+    detail: 0 of 3 openapi documents pass
+  - id: asyncapi_present
+    status: missed
+  - id: json_schema_present
+    status: missed
+  - id: json_schema_per_resource
+    status: missed
+  - id: json_ld_present
+    status: missed
+  - id: json_ld_class_depth
+    status: missed
+  - id: json_ld_property_depth
+    status: missed
+  - id: lifecycle_documented
+    status: missed
+  - id: domain_standard_conformance
+    status: missed
+  - id: rules_present
+    status: missed
+  - id: rules_substantial
+    status: missed
+  - id: balanced_severities
+    status: missed
+  - id: vocabulary_published
+    status: missed
+  - id: conformance_declared
+    status: missed
+  - id: overlay_published
+    status: missed
+  - id: change_log_present
+    status: missed
+  - id: status_page_present
+    status: missed
+  - id: deprecation_policy
+    status: missed
+  - id: security_disclosure
+    status: missed
+  - id: webhooks_advertised
+    status: missed
+  - id: roadmap_present
+    status: missed
+  - id: examples_published
+    status: missed
+  - id: portal_present
+    status: missed
+  - id: api_reference_present
+    status: missed
+  - id: getting_started_present
+    status: missed
+  - id: authentication_documented
+    status: missed
+  - id: sdk_count_1
+    status: missed
+  - id: sdk_count_3
+    status: missed
+  - id: cli_present
+    status: missed
+  - id: console_or_sandbox
+    status: missed
+  - id: postman_present
+    status: missed
+  - id: agent_skill_present
+    status: missed
+  - id: support_channel
+    status: missed
+  - id: blog_present
+    status: missed
+  - id: terms_of_service
+    status: missed
+  - id: privacy_policy
+    status: missed
+  - id: compliance_published
+    status: missed
+  - id: trust_center
+    status: missed
+  - id: reg_oauth_scopes
+    status: missed
+  - id: reg_authentication_documented
+    status: missed
+  - id: reg_security_disclosure
+    status: missed
+  - id: reg_vulnerability_disclosure
+    status: missed
+  - id: reg_terms_of_service
+    status: missed
+  - id: reg_privacy_policy
+    status: missed
+  - id: reg_compliance_published
+    status: missed
+  - id: reg_standards_conformance
+    status: missed
+  - id: mcp_server
+    status: missed
+  - id: auth_clarity
+    status: missed
+  - id: error_semantics
+    status: missed
+  - id: openapi_examples
+    status: missed
+  - id: event_surface_described
+    status: missed
+  - id: agent_skills
+    status: missed
+  - id: well_known_catalog
+    status: missed
+  - id: consent_identity
+    status: missed
+  - id: agent_card
+    status: missed
+  - id: delegated_identity
+    status: missed
+  - id: protected_resource_metadata
+    status: missed
+  - id: dynamic_client_registration
+    status: missed
+  - id: agentic_commerce
+    status: missed
+  - id: rate_limits_documented
+    status: partial
+    earned: 2.0
+  - id: rate_limits_rich
+    status: partial
+    earned: 1.0
+  - id: github_org_present
+    status: partial
+    earned: 1.0
+    detail: pointer liveness 0.5
+  - id: agentic_access
+    status: partial
+    earned: 2.5
+    detail: 'authorship: derived'
+  - id: rate_limit_signal
+    status: partial
+    earned: 3.5
+    detail: 'grade: documented'
