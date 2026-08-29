@@ -6,6 +6,18 @@ description: >-
   stars. A companion REST API (davemachado/public-api) exposes the directory data programmatically over HTTPS with no
   authentication.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: open
@@ -101,6 +113,10 @@ apis:
   - type: GitHubRepository
     url: https://github.com/davemachado/public-api
 common:
+  - type: IssueTracker
+    url: https://github.com/public-apis/public-apis/issues
+  - type: ContributionGuide
+    url: https://github.com/public-apis/public-apis/blob/master/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/public-apis-agentic-access.yml
   - type: Website
