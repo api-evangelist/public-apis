@@ -2,16 +2,16 @@
 kin_checks:
   slug: public-apis
   schema_version: 0.15.1
-  scored_at: '2026-08-27'
-  run_ts: 2026-08-27T140727
+  scored_at: '2026-08-28'
+  run_ts: 2026-08-28T221322
   note: Actionable checks only (missed + partial). earned/na are every other check
     in rubric/scoring-0.15.1.yml; counts below let you verify that.
   counts:
     total: 130
-    earned: 22
+    earned: 23
     partial: 5
-    missed: 71
-    na: 32
+    missed: 74
+    na: 28
   checks:
   - id: base_url_per_api
     status: missed
@@ -135,6 +135,12 @@ kin_checks:
   - id: reg_compliance_published
     status: missed
   - id: reg_standards_conformance
+    status: missed
+  - id: os_security_policy
+    status: missed
+  - id: os_releases
+    status: missed
+  - id: os_code_of_conduct
     status: missed
   - id: mcp_server
     status: missed
