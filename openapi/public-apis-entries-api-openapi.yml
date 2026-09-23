@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Public APIs Categories Entries API
+  title: Public Entries API
   description: 'A RESTful API for programmatically accessing the public-apis directory data. The API supports CORS and requires no authentication. All responses are served over HTTPS. Original source: davemachado/public-api.'
   version: '1.0'
   contact:
@@ -112,16 +112,6 @@ paths:
                 $ref: '#/components/schemas/EntriesResponse'
 components:
   schemas:
-    EntriesResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-          description: Number of entries returned.
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entry'
     Entry:
       type: object
       properties:
@@ -146,3 +136,13 @@ components:
           format: uri
         Category:
           type: string
+    EntriesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Number of entries returned.
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry'
