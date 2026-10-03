@@ -112,16 +112,6 @@ paths:
                 $ref: '#/components/schemas/EntriesResponse'
 components:
   schemas:
-    EntriesResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-          description: Number of entries returned.
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entry'
     Entry:
       type: object
       properties:
@@ -146,3 +136,13 @@ components:
           format: uri
         Category:
           type: string
+    EntriesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Number of entries returned.
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry'
