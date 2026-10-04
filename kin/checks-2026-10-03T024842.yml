@@ -1,19 +1,23 @@
 ---
 kin_checks:
   slug: public-apis
-  schema_version: 0.22.0
-  scored_at: '2026-09-21'
-  run_ts: 2026-09-21T233935
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T024842
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
-    apply in `na`. Everything else in rubric/scoring-0.22.0.yml was earned; counts
+    apply in `na`. Everything else in rubric/scoring-0.23.0.yml was earned; counts
     below let you verify that.
   counts:
-    total: 136
-    earned: 21
-    partial: 5
-    missed: 76
-    na: 34
+    total: 153
+    earned: 10
+    partial: 17
+    missed: 94
+    na: 32
   checks:
+  - id: newsroom_present
+    status: missed
+  - id: leadership_present
+    status: missed
   - id: multiple_apis
     status: missed
   - id: base_url_per_api
@@ -26,29 +30,36 @@ kin_checks:
     status: missed
   - id: openapi_3_2
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: openapi_3_1
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: servers_resolvable
     status: missed
   - id: error_responses_documented
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: examples_present
     status: missed
   - id: components_reuse
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: security_schemes_defined
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: security_applied
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: webhooks_or_callbacks
     status: missed
-    detail: 0 of 3 openapi documents pass
+    detail: 0 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: asyncapi_present
     status: missed
   - id: json_schema_present
@@ -139,6 +150,38 @@ kin_checks:
     status: missed
   - id: reg_standards_conformance
     status: missed
+  - id: reg_named_standard_conformance
+    status: missed
+  - id: reg_sbom
+    status: missed
+  - id: reg_support_lifetime
+    status: missed
+  - id: reg_accessibility_conformance
+    status: missed
+  - id: reg_global_privacy_control
+    status: missed
+  - id: reg_data_subject_request
+    status: missed
+  - id: reg_subprocessors
+    status: missed
+  - id: reg_data_residency
+    status: missed
+  - id: reg_incident_notification
+    status: missed
+  - id: reg_age_assurance
+    status: missed
+  - id: reg_notice_and_action
+    status: missed
+  - id: reg_transparency_report
+    status: missed
+  - id: reg_exit_assistance
+    status: missed
+  - id: os_security_policy
+    status: missed
+  - id: os_releases
+    status: missed
+  - id: os_code_of_conduct
+    status: missed
   - id: upsert_outcome_discriminator
     status: missed
   - id: upsert_alternate_key
@@ -173,6 +216,64 @@ kin_checks:
     status: missed
   - id: agentic_commerce
     status: missed
+  - id: contract_present
+    status: partial
+    earned: 18.0
+  - id: openapi_3_0
+    status: partial
+    earned: 2.7
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: info_complete
+    status: partial
+    earned: 3.6
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: servers_defined
+    status: partial
+    earned: 2.7
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: operations_summary_coverage
+    status: partial
+    earned: 5.4
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: operations_description_coverage
+    status: partial
+    earned: 5.4
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: operations_tagged
+    status: partial
+    earned: 3.6
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: operations_operation_ids
+    status: partial
+    earned: 3.6
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: response_coverage
+    status: partial
+    earned: 4.5
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: oauth_flows_current
+    status: partial
+    earned: 3.6
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: credentials_not_in_query
+    status: partial
+    earned: 2.7
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
+  - id: oauth_scopes_enumerated
+    status: partial
+    earned: 3.6
+    detail: 3 of 3 openapi documents pass; credited at 90% because of their provenance
+      (unknown)
   - id: rate_limits_documented
     status: partial
     earned: 2.0
@@ -204,23 +305,21 @@ kin_checks:
   - graphql_type_depth
   - idempotency
   - inbound_contract_published
+  - mcp_endpoint_discoverable
   - messages_with_schema
-  - os_code_of_conduct
-  - os_contribution_guide
-  - os_releases
-  - os_security_policy
   - plans_multiple
   - plans_present
   - pricing_link
+  - reg_ai_transparency
   - reg_camara_conformance
   - reg_certification_signal
   - reg_consent_model
   - reg_entitlement_terms
   - reg_fapi_profile
   - reg_mandate_verified
-  - reg_named_standard_conformance
   - reg_pci_sca
   - reg_smart_configuration
+  - reg_training_data_summary
   - reg_write_surface
   - reversibility_documented
   - security_schemes
