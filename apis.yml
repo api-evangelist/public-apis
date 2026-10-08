@@ -120,6 +120,12 @@ apis:
   - type: GitHubRepository
     url: https://github.com/davemachado/public-api
 common:
+  - type: Plans
+    url: plans/public-apis-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/public-apis-rate-limits.yml
+  - type: FinOps
+    url: finops/public-apis-finops.yml
   - type: IssueTracker
     url: https://github.com/public-apis/public-apis/issues
   - type: ContributionGuide
