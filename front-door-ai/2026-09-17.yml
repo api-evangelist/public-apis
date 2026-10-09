@@ -7,8 +7,8 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: github.com
   final_host: github.com
-  ownership: unresolved
-  owner: null
+  ownership: shared
+  owner: github
   shares_host_with:
   - 1pt
   - administrative-divisons-db
@@ -51,6 +51,7 @@ front_door_ai:
   - football-standings
   - gaana
   - geek-jokes
+  - github
   - github-actions
   - github-container-registry
   - github-enterprise
@@ -144,8 +145,11 @@ front_door_ai:
   - xh
   - yo-momma-jokes
   inherited_from: null
+  alias_of: null
   verdict: scored
   score: null
+  band: null
+  band_label: null
   host_score: 23
   density: null
   words: 885
